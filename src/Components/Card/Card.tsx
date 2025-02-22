@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Card.css";
 
 type Props = {}
 
@@ -6,7 +7,7 @@ const Card = (props: Props) => {
   return (
     <div className="card">
         <img
-            src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8HY6O4RoSGPogVK1MVHrEROWak714g2e6BQ&s"
             alt="Image"
         />
         <div className='details'>
