@@ -22,6 +22,7 @@ function App() {
     if (typeof result === "string") {
       setServerError(result);
     } else if (Array.isArray(result.data)) {
+      setServerError("");
       setSearchResults(result.data);
     }
     console.log(searchResults);
