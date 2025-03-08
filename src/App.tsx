@@ -17,6 +17,11 @@ function App() {
     console.log(e);
   };
 
+  const onPortfolioCreate = (e: SyntheticEvent) => {
+    e.preventDefault();
+    console.log(e);
+  }
+
   const onClick = async (e: SyntheticEvent) => {
     const result = await searchCompanies(search);
     if (typeof result === "string") {
@@ -30,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Search onClick={onClick} search={search} handleChange={handleChange} />
-      <CardList searchResults={searchResults} />
+      <CardList searchResults={searchResults} onPortfolioCreate={onPortfolioCreate}/>
       {serverError && <h1>{serverError}</h1>}
     </div>
   );
