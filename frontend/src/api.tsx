@@ -12,7 +12,7 @@ export const searchCompanies = async (query: string) => {
         );
         return data;
     } catch (error) {
-        if(axios.isAxiosError(error)) {
+        if (axios.isAxiosError(error)) {
             console.log("error message: ", error.message);
             return error.message;
         } else {

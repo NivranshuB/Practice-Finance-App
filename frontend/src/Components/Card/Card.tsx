@@ -10,7 +10,7 @@ interface Props {
   onPortfolioCreate: (e: SyntheticEvent) => void;
 }
 
-const Card: React.FC<Props> = ({ id, searchResult, onPortfolioCreate }: Props) : React.JSX.Element => {
+const Card: React.FC<Props> = ({ id, searchResult, onPortfolioCreate }: Props): React.JSX.Element => {
   return (
     <div
       className="flex flex-col items-center justify-between w-full p-6 bg-slate-100 rounded-lg md:flex-row"

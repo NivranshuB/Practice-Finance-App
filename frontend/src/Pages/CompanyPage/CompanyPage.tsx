@@ -1,11 +1,11 @@
 import React from 'react'
 
-interface Props {}
+interface Props { }
 
 const CompanyPage = (props: Props) => {
-  return (
-    <div>CompanyPage</div>
-  )
+    return (
+        <div>CompanyPage</div>
+    )
 }
 
 export default CompanyPage

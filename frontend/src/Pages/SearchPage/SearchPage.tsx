@@ -6,7 +6,7 @@ import Search from '../../Components/Search/Search';
 import ListPortfolio from '../../Components/Portfolio/ListPortfolio/ListPortfolio';
 import CardList from '../../Components/CardList/CardList';
 
-interface Props {}
+interface Props { }
 
 const SearchPage = (props: Props) => {
     const [search, setSearch] = useState<string>("");
@@ -29,7 +29,7 @@ const SearchPage = (props: Props) => {
     const onPortfolioDelete = (e: any) => {
         e.preventDefault();
         const removed = portfolioValues.filter((value) => {
-        return value !== e.target[0].value;
+            return value !== e.target[0].value;
         });
         setPortfolioValues(removed);
     }
@@ -38,29 +38,29 @@ const SearchPage = (props: Props) => {
         e.preventDefault();
         const result = await searchCompanies(search);
         if (typeof result === "string") {
-        setServerError(result);
+            setServerError(result);
         } else if (Array.isArray(result.data)) {
-        setServerError("");
-        setSearchResults(result.data);
+            setServerError("");
+            setSearchResults(result.data);
         }
         console.log(searchResults);
     };
     return (
-    <div className="App">
-        <Search 
-        onSearchSubmit={onSearchSubmit} 
-        search={search} 
-        handleSearchChange={handleSearchChange} 
-        />
-        <ListPortfolio 
-        portfolioValues={portfolioValues} 
-        onPortfolioDelete={onPortfolioDelete} />
-        <CardList 
-        searchResults={searchResults} 
-        onPortfolioCreate={onPortfolioCreate}
-        />
-        {serverError && <h1>{serverError}</h1>}
-    </div>
+        <div className="App">
+            <Search
+                onSearchSubmit={onSearchSubmit}
+                search={search}
+                handleSearchChange={handleSearchChange}
+            />
+            <ListPortfolio
+                portfolioValues={portfolioValues}
+                onPortfolioDelete={onPortfolioDelete} />
+            <CardList
+                searchResults={searchResults}
+                onPortfolioCreate={onPortfolioCreate}
+            />
+            {serverError && <h1>{serverError}</h1>}
+        </div>
     )
 }
 
