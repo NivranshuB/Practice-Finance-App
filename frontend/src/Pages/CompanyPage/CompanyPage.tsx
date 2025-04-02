@@ -7,6 +7,7 @@ import CompanyDashboard from '../../Components/CompanyDashboard/CompanyDashboard
 import Tile from '../../Components/Tile/Tile';
 import Spinner from '../../Components/Spinner/Spinner';
 import TenKFinder from '../../Components/TenKFinder/TenKFinder';
+import { formatRatio } from '../../Helpers/NumberFormating';
 
 interface Props { }
 
@@ -28,9 +29,9 @@ const CompanyPage = (props: Props) => {
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName}></Tile>
-            <Tile title="Price" subTitle={company.price.toString()}></Tile>
+            <Tile title="Price" subTitle={"$" + company.price.toString()}></Tile>
             <Tile title="Sector" subTitle={company.sector}></Tile>
-            <Tile title="Market Cap" subTitle={company.mktCap.toString()}></Tile>
+            <Tile title="DCF" subTitle={"$" + formatRatio(company.dcf).toString()}></Tile>
             <TenKFinder ticker={company.symbol}/>
             <p className="bg-white shadow rounded text-medium text-gray-900 p-3 mt-1 m-4">
               {company.description}
